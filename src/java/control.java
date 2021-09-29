@@ -58,7 +58,7 @@ public class control implements EventHandler<MouseEvent> {
                         reDraw();
                         current.setSelected(false);
                     }
-
+                    current.setSelected(false);
                 }
             }else {
                 if (player2CanEat()){
@@ -86,9 +86,10 @@ public class control implements EventHandler<MouseEvent> {
                             boradPane.setCurrentSide("player1");
                             return;
                         }
+                        boradPane.setCurrentSide("player1");
+                        reDraw();
+                        current.setSelected(false);
                     }
-                    boradPane.setCurrentSide("player1");
-                    reDraw();
                     current.setSelected(false);
                 }
             }
@@ -133,10 +134,8 @@ public class control implements EventHandler<MouseEvent> {
                 }
             }
             if (x > 1){
-                if (allChess[x - 2][y - 2] == 0 &&
-                        (allChess[x - 1][y - 1] == type1 || allChess[x - 1][y - 1] == type2)){
-                    return true;
-                }
+                return allChess[x - 2][y - 2] == 0 &&
+                        (allChess[x - 1][y - 1] == type1 || allChess[x - 1][y - 1] == type2);
             }
         }
         return false;
@@ -150,10 +149,8 @@ public class control implements EventHandler<MouseEvent> {
                 }
             }
             if (x > 1){
-                if (allChess[x - 2][y + 2] == 0 &&
-                        (allChess[x - 1][y + 1] == type1 || allChess[x - 1][y + 1] == type2)){
-                    return true;
-                }
+                return allChess[x - 2][y + 2] == 0 &&
+                        (allChess[x - 1][y + 1] == type1 || allChess[x - 1][y + 1] == type2);
             }
         }
         return false;
