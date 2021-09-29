@@ -27,6 +27,7 @@ public class control implements EventHandler<MouseEvent> {
                 chesses.setSelected(true);
             }
         } else {
+            isGameOver();
             chesses current = isSelected();
             if (boradPane.getCurrentSide() == "player1"){
                 if (player1CanEat()){
